@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Polygon - exercise 1</title>
+	<script id="vertex-shader" type="x-shader/x-vertex">
+		attribute	vec4	vPosition;
+
+		void main()
+		{
+			gl_Position=vPosition;
+		}
+	</script>
+	<script id="fragment-shader" type="x-shader/x-fragment">
+		precision mediump float;
+		void main()
+		{
+			gl_FragColor=vec4(0.0, 0.0, 1.0, 0.5);
+		}
+	</script>
+
+	<script type="text/javascript" src="Common/webgl-utils.js"></script>
+	<script type="text/javascript" src="Common/initShaders.js"></script>
+	<script type="text/javascript" src="Common/MV.js"></script>
+	<script type="text/javascript" src="poligono1.js"></script>
+</head>
+<body>
+
+<h1>Polygon - exercise 1</h1>
+<canvas id="gl-canvas" width="512" height="512" style="border:2px solid orange;">
+	Oops... Browser does not support HTML 5 element Canvas
+</canvas>
+
+<form>
+	x Center: 			 <input id="xCentro" type="text" pattern="[-+]?[0-9]+(\.[0-9]+)?" value="0.0"/> <br/>
+	y Center: 			 <input id="yCentro" type="text" pattern="[-+]?[0-9]+(\.[0-9]+)?" value="0.0"/> <br/>
+	Radius: 			 <input id="raio" type="text" pattern="[0-9]+(\.[0-9]+)?" value="0.5"/> <br/>
+	Vertex number   <input id="n" type="text" pattern="[0-9]+" value="15"/> <br/>
+	<!-- <input type="button" value="Draw" onclick="drawPolygon()"/> -->
+	<input type="button" value="Draw" id="btn">
+</form>
+</body>
+</html>
